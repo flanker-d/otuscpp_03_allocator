@@ -48,4 +48,4 @@ include(CPack)
 
 enable_testing()
 
-add_test(funcs_tests tests)
+add_test(funcs_tests funcs_tests)
