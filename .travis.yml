@@ -6,7 +6,7 @@ script:
 - cmake --build .
 - cmake --build . --target test
 - cmake --build . --target package
-compiler: clang
+compiler: g++
 deploy:
   provider: script
   skip_cleanup: true
