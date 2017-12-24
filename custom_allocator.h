@@ -24,16 +24,16 @@ public:
   }
 
   template<typename U, typename ...Args>
-  void construct(T* p, Args&& ...args)
+  void construct(U* p, Args&& ...args)
   {
     std::cout << "construct" << std::endl;
-    new((void *)p) U(std::forward<Args>(args)...);
+    ::new((void *)p) U(std::forward<Args>(args)...);
   }
 
   template<typename U>
-  void destroy(T* p)
+  void destroy(U* p)
   {
     std::cout << "destroy" << std::endl;
-    p->~T();
+    p->~U();
   }
 };
