@@ -10,7 +10,7 @@ add_executable(allocator main.cpp)
 
 add_executable(funcs_tests tests.cpp)
 
-add_library(custom_allocator custom_allocator.cpp funcs.cpp)
+add_library(custom_allocator custom_allocator.cpp mem_pool.cpp funcs.cpp)
 
 
 set_target_properties(allocator custom_allocator funcs_tests PROPERTIES
