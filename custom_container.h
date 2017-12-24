@@ -13,6 +13,8 @@ struct element
 template <typename T, typename A = std::allocator<element<T>>>
 class custom_container
 {
+  using iterator = element<T>*;
+
   public:
     void push_back(const T& data)
     {
@@ -36,6 +38,16 @@ class custom_container
           count_++;
         }
       }
+    }
+
+    iterator begin()
+    {
+      return head_;
+    }
+
+    iterator end()
+    {
+      return head_ + count_;
     }
 
   private:

@@ -15,15 +15,8 @@ int main(int argc, char **argv)
     m.insert(std::make_pair(i, factorial(i)));
   }
 
-  for(const auto& it : m)
-  {
-    std::cout<< it.first << " " << it.second << std::endl;
-  }
-
-
   //custom map
   custom_map cm;
-
   for (int i = 0; i < 10; i++)
   {
     cm.insert(std::make_pair(i, factorial(i)));
@@ -41,6 +34,11 @@ int main(int argc, char **argv)
   custom_container<int, custom_allocator<element<int>>> cc;
   for(int i = 0; i < 10; i++)
     cc.push_back(i);
+
+  for(auto it : cc)
+  {
+    std::cout << it.data << std::endl;
+  }
 
   return 0;
 }
