@@ -16,6 +16,11 @@ class custom_container
   using iterator = element<T>*;
 
   public:
+    ~custom_container()
+    {
+      allocator_.deallocate(head_, count_);
+    }
+
     void push_back(const T& data)
     {
       auto p = allocator_.allocate(1);
