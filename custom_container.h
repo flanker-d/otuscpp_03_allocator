@@ -18,7 +18,13 @@ class custom_container
   public:
     ~custom_container()
     {
-      allocator_.deallocate(head_, count_);
+      element<T>* ptr = head_;
+      while(ptr != nullptr)
+      {
+        element<T>* ptr_to_del = ptr;
+        ptr = ptr->next;
+        allocator_.deallocate(ptr_to_del, 1);
+      }
     }
 
     void push_back(const T& data)

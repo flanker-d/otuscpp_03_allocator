@@ -6,7 +6,7 @@
 
 struct mem_block
 {
-  std::unique_ptr<std::uint8_t[]> data;
+  std::unique_ptr<std::uint8_t[]> data = nullptr;
   mem_block *next = nullptr;
 };
 
@@ -21,7 +21,7 @@ class mem_block_list
         mem_block* ptr_to_del = ptr;
         ptr = ptr->next;
         ptr_to_del->data.reset(nullptr);
-        delete ptr_to_del;
+        std::free(ptr_to_del);
       }
     }
 
