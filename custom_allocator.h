@@ -27,7 +27,9 @@ class custom_allocator
     void deallocate(T* p, std::size_t n)
     {
       //std::cout << "deallocate " << n << std::endl;
-      //std::free(p);
+//      if(p != nullptr)
+//      {
+//      }
     }
 
     template<typename U, typename ...Args>

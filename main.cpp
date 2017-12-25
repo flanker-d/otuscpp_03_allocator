@@ -21,11 +21,13 @@ int main(int argc, char **argv)
   {
     cm.insert(std::make_pair(i, factorial(i)));
   }
+  //cm.insert(std::make_pair(10, factorial(10)));
 
   for(const auto& it : cm)
   {
     std::cout<< it.first << " " << it.second << std::endl;
   }
+
 
   custom_container<int> c;
   for(int i = 0; i < 10; i++)
@@ -35,7 +37,7 @@ int main(int argc, char **argv)
   for(int i = 0; i < 10; i++)
     cc.push_back(i);
 
-  for(auto it : cc)
+  for(const auto& it : cc)
   {
     std::cout << it.data << std::endl;
   }
