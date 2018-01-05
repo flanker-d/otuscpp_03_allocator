@@ -3,8 +3,7 @@
 #include <map>
 #include "custom_container.h"
 
-using compare_type = std::common_type<int, std::int64_t>::type;
-using custom_map = std::map<int, std::int64_t, std::less<compare_type>, custom_allocator<std::pair<int, std::int64_t>>>;
+using custom_map = std::map<int, std::int64_t, std::less<int>, custom_allocator<std::pair<const int, std::int64_t>>>;
 
 int main(int argc, char **argv)
 {
@@ -22,6 +21,7 @@ int main(int argc, char **argv)
     cm.insert(std::make_pair(i, factorial(i)));
   }
   //cm.insert(std::make_pair(10, factorial(10)));
+  //cm.insert(std::make_pair(11, factorial(11)));
 
   for(const auto& it : cm)
   {

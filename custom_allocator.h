@@ -1,6 +1,6 @@
 #pragma once
 
-#include <iostream>
+//#include <iostream>
 #include "mem_pool.h"
 
 template <typename T>
@@ -27,9 +27,9 @@ class custom_allocator
     void deallocate(T* p, std::size_t n)
     {
       //std::cout << "deallocate " << n << std::endl;
-//      if(p != nullptr)
-//      {
-//      }
+      //if(p != nullptr)
+      //{
+      //}
     }
 
     template<typename U, typename ...Args>

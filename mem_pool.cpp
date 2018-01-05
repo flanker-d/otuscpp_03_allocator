@@ -17,7 +17,7 @@ void* mem_pool::get_next_allocated_mem()
 {
   if(elements_count_ < reserved_count_)
   {
-    return cur_free_memory_ + (elements_count_++ * element_size_);
+    return reinterpret_cast<void*>(reinterpret_cast<std::uint8_t*>(cur_free_memory_) + (elements_count_++ * element_size_));
   }
   else
   {
@@ -26,7 +26,7 @@ void* mem_pool::get_next_allocated_mem()
     {
       elements_count_ = 0;
       cur_free_memory_ = ptr;
-      return cur_free_memory_ + (elements_count_++ * element_size_);
+      return reinterpret_cast<void*>(reinterpret_cast<std::uint8_t*>(cur_free_memory_) + (elements_count_++ * element_size_));
     }
   }
 }
